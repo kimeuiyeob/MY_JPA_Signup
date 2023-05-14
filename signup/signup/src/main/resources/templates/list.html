@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 목록 출력</title>
+</head>
+<body>
+
+<style>
+    body {
+        background-color : #add8e6;
+    }
+
+     p {
+        font-family: "Arial Black", sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align : center;
+    }
+    .s1 { text-shadow: 2px 2px 2px gray; }
+
+    th {
+        width : 200px;
+        height : 30px;
+        background-color: #bed6e2;
+        color : white;
+
+    }
+    td {
+        height : 30px;
+         color : white;
+    }
+    a {
+        text-decoration : none;
+        color : white;
+    }
+
+</style>
+
+<p class="s1">회원 목록</p>
+
+<table border="1px" align="center">
+    <tr>
+        <th>아이디</th>
+        <th>이메일</th>
+        <th>상세 조회</th>
+        <th>삭제</th>
+    </tr>
+    <tr th:each="member : ${memberList}">
+        <td th:text="${member.id}"></td>
+        <td th:text="${member.memberEmail}" style="width : 400px"></td>
+        <td style="text-align: center;">
+            <a th:href="@{/member/detail(id=${member.id})}">상세 조회</a>
+        </td>
+        <td style="text-align: center;">
+            <a th:href="@{/member/delete(id=${member.id})}">삭제</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

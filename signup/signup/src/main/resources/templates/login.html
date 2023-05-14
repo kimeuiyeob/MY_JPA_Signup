@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<style>
+    body {
+        background-color : #add8e6;
+    }
+
+    p {
+        font-family: "Arial Black", sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align : center;
+    }
+    .s1 { text-shadow: 2px 2px 2px gray; }
+
+     div {
+        text-align : center;
+        padding-bottom : 20px;
+        text-shadow: 2px 2px 2px gray;
+    }
+
+    button{
+        width : 300px;
+        height : 50px;
+        border-radius : 10px;
+        border : none;
+        background-color : #a1a1c7;
+        font-size : 20px;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px gray;
+        color : white;
+        box-shadow: 5px 5px 5px;
+        transition: all 0.2s linear;
+        cursor : pointer;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+    input {
+        width : 280px;
+        height : 50px;
+        border-radius : 10px;
+        border : none;
+        font-size : 20px;
+        font-weight: 500;
+        padding-inline: 10px;
+    }
+
+</style>
+
+<body>
+
+<p class="s1">로 그 인</p>
+
+<form th:action="@{/member/login}" method="post">
+    <div>
+        <input type="email" name="memberEmail" placeholder="EMAIL">
+    </div>
+    <div>
+        <input type="password" name="memberPassword" placeholder="PASSWORD">
+    </div>
+    <div>
+        <button type="submit">로그인</button>
+    </div>
+</form>
+
+</body>
+</html>

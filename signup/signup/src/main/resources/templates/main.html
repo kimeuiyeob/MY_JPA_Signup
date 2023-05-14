@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+    session 값 확인 : <p th:text ="${session.loginEmail}"></p>
+
+    이름 : <p th:text="${member.memberName}"></p>
+    이메일 : <p th:text="${member.memberEmail}"></p>
+    비밀번호 : <p th:text="${member.memberPassword}"></p>
+
+    <a href="/member/update">회원정보 수정하기</a>
+    <a href="/member/logout">로그 아웃</a>
+
+</body>
+</html>
